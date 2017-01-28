@@ -1,7 +1,5 @@
 package LinkedList;
 
-import LinkedList.LinkedListPallindrome.ListNode;
-
 public class PallindromeRecursion {
 	ListNode head;
 	class ListNode{
