@@ -16,13 +16,14 @@ As 2 is the second smallest element in the tree.
  
 https://www.interviewbit.com/problems/kth-smallest-element-in-tree/
 */
-class TreeNode {
-	int val;
-	TreeNode left;
-	TreeNode right;
-	TreeNode(int x) { val = x; }
-}
+
 public class kthsmallestElement {
+	class TreeNode {
+		int val;
+		TreeNode left;
+		TreeNode right;
+		TreeNode(int x) { val = x; }
+	}
 	 public int kthsmallest(TreeNode root, int k) {
 	        Stack <TreeNode> stack = new Stack<TreeNode>();
 	        TreeNode p = root;
