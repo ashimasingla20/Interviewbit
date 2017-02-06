@@ -24,22 +24,22 @@ public class kthsmallestElement {
 		TreeNode right;
 		TreeNode(int x) { val = x; }
 	}
-	 public int kthsmallest(TreeNode root, int k) {
-	        Stack <TreeNode> stack = new Stack<TreeNode>();
-	        TreeNode p = root;
-	        while(p!=null || !stack.isEmpty()){
-	            if(p!=null){
-	                stack.push(p);
-	                p = p.left;
-	            }else{
-	                TreeNode ele = stack.pop();
-	                k--;
-	                if(k==0){
-	                    return ele.val;
-	                }
-	                p = ele.right;
+	public int kthsmallest(TreeNode root, int k) {
+		Stack <TreeNode> stack = new Stack<TreeNode>();
+	    TreeNode p = root;
+	    while(p!=null || !stack.isEmpty()){
+	    	if(p!=null){
+	    		stack.push(p);
+	            p = p.left;
+	        }else{
+	        	TreeNode ele = stack.pop();
+	            k--;
+	            if(k==0){
+	            	return ele.val;
 	            }
-	        }
-	        return root.val;
-	    }
+	            p = ele.right;
+	         }
+	     }
+	     return root.val;
+	}
 }
