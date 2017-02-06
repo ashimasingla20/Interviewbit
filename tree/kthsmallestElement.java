@@ -1,4 +1,7 @@
 package tree;
+
+import java.util.Stack;
+
 /*
 Given a binary search tree, write a function to find the kth smallest element in the tree.
 Example :
@@ -20,5 +23,22 @@ class TreeNode {
 	TreeNode(int x) { val = x; }
 }
 public class kthsmallestElement {
-
+	 public int kthsmallest(TreeNode root, int k) {
+	        Stack <TreeNode> stack = new Stack<TreeNode>();
+	        TreeNode p = root;
+	        while(p!=null || !stack.isEmpty()){
+	            if(p!=null){
+	                stack.push(p);
+	                p = p.left;
+	            }else{
+	                TreeNode ele = stack.pop();
+	                k--;
+	                if(k==0){
+	                    return ele.val;
+	                }
+	                p = ele.right;
+	            }
+	        }
+	        return root.val;
+	    }
 }
